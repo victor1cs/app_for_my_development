@@ -17,6 +17,12 @@ cd app_for_my_development
 
 Create a .env file in the project root and add the information below:
 
+```
+DATABASE_USERNAME=victor1cs
+DATABASE_PASSWORD=teste
+```
+
+
 If you prefer, you can create the file directly via terminal with the following command:
 
 ```
