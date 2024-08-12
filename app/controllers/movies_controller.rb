@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     @selected_category = params[:category]
 
     if @selected_category.present?
-      movie_service = MovieService.new(ENV['TMDB_API_KEY'])
+      movie_service = MovieService.new(ENV["TMDB_API_KEY"])
       @movies = movie_service.search_movies(@selected_category)
     else
       @movies = []
