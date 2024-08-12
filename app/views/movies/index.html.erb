@@ -13,5 +13,14 @@
 <% end %>
 
 <% if @selected_category.present? %>
-  <p>Buscando filmes para a categoria: <%= Category.find(@selected_category).name %></p>
+  <h2>Resultados da Busca</h2>
+  <% if @movies.any? %>
+    <ul>
+      <% @movies.each do |movie| %>
+        <li><strong><%= movie['title'] %></strong>: <%= movie['overview'] %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Nenhum filme encontrado para a categoria <%= @selected_category %>.</p>
+  <% end %>
 <% end %>

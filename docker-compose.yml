@@ -20,3 +20,4 @@ services:
       - db
     environment:
       DATABASE_URL: "postgres://victor1cs:teste@db:5432/db"
+      TMDB_API_KEY: "f9691ce98ed605939930032a7f2ee63a"

@@ -5,6 +5,13 @@ class MoviesController < ApplicationController
   def index
     @categories = Category.all
     @selected_category = params[:category]
+
+    if @selected_category.present?
+      movie_service = MovieService.new(ENV['TMDB_API_KEY'])
+      @movies = movie_service.search_movies(@selected_category)
+    else
+      @movies = []
+    end
   end
 
   # GET /movies/1 or /movies/1.json
