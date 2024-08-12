@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: victor1cs
+      POSTGRES_PASSWORD: teste
+      POSTGRES_DB: db
+
+  web:
+    build: .
+    command: bundle exec rails s -b '0.0.0.0'
+    volumes:
+      - '.:/app'
+    ports:
+      - "8080:3000"
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgres://victor1cs:teste@db:5432/db"
