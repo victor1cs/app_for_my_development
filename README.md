@@ -6,7 +6,7 @@ To run the project, follow the steps below:
 
 Clone the project:
 ```
-git clone .
+git clone git@github.com:victor1cs/app_for_my_development.git
 ```
 
 Access the project directory:
